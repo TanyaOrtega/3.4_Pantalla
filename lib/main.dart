@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'LDSW 3.4 Utilización de Widgets',
+      title: 'LDSW 3.5 Home Screen',
       home: HomeScreen(),
     );
   }

@@ -2,52 +2,70 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
-    super.key,
-  }) ;
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LDSW 3.4 Utilización de Widgets'),
+        title: const Text('LDSW 3.5 Home Screen'),
         backgroundColor: const Color.fromARGB(255, 218, 157, 228),
       ),
       body: Stack(
         children: [
+          // Fondo de pantalla
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  "https://img.freepik.com/foto-gratis/vista-elementos-cine-3d_23-2150720822.jpg",
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.black.withOpacity(0.4), // Sombra semitransparente
+            width: double.infinity,
+            height: double.infinity,
+          ),
           Container(
             margin: const EdgeInsets.only(top: 10),
             width: double.infinity,
             height: 400,
-            decoration: const BoxDecoration(color: Colors.white),
+            decoration: const BoxDecoration(color: Colors.transparent),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  child: Row(
-                    children: const [
-                      CircleAvatar(
-                        child: Text("P"),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "PANTALLA",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          color: Color.fromARGB(255, 73, 1, 1),
-                        ),
-                      ),
-                    ],
+                const Text(
+                  '¡Bienvenido a la Aplicación Pantalla!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 245, 241, 241),
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 300,
-                  child: Image.network(
-                    "https://img.freepik.com/foto-gratis/vista-elementos-cine-3d_23-2150720822.jpg",
-                    fit: BoxFit.cover,
-                  ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    CircleAvatar(
+                      child: Text("P"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "PANTALLA",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -59,12 +77,12 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 //
               },
-              child: Text('Ver más'),
+              child: const Text('Ver más'),
             ),
           ),
         ],
       ),
-      backgroundColor: const Color.fromARGB(255, 220, 217, 217),
+      backgroundColor: Colors.black, // Color de fondo
     );
   }
 }
